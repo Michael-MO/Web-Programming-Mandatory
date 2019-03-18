@@ -1,5 +1,6 @@
 const MOVIES = [
   {
+    ID: 1,
     Title: "Furious 7",
     Year: 2015,
     Genre: "Action, Crime, Thriller",
@@ -9,6 +10,7 @@ const MOVIES = [
     Poster: "assets/Image/Furious7.jpg"
   },
   {
+    ID: 2,
     Title: "Batman",
     Year: 1989,
     Genre: "Action, Adventure",
@@ -18,6 +20,7 @@ const MOVIES = [
     Poster: "assets/Image/Batman.jpg"
   },
   {
+    ID: 3,
     Title: "Skyfall",
     Year: 2012,
     Genre: "Action, Adventure, Thriller",
@@ -27,6 +30,7 @@ const MOVIES = [
     Poster: "assets/Image/Skyfall.jpg"
   },
   {
+    ID: 4,
     Title: "Avatar",
     Year: 2009,
     Genre: "Action, Adventure, Fantasy",
@@ -36,6 +40,7 @@ const MOVIES = [
     Poster: "assets/Image/Avatar.jpg"
   },
   {
+    ID: 5,
     Title: "Kill Bill: Vol. 1",
     Year: 2003,
     Genre: "Action, Crime, Thriller",
