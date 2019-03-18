@@ -11,8 +11,8 @@ const MoviesDetails = props => {
             {props.movie.Title + " (" + props.movie.Year + ")"}
           </h4>
           <p className="card-text">
-            Genre: {props.movie.Genre} <br />
-            Actors: {props.movie.Actors}
+            <strong>Genre:</strong> {props.movie.Genre} <br />
+            <strong>Actors:</strong> {props.movie.Actors}
           </p>
           <hr />
           <p className="card-text">
