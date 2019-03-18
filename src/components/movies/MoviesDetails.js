@@ -7,8 +7,18 @@ const MoviesDetails = props => {
     <React.Fragment>
       <div className="card">
         <div className="card-body">
-          <h3 className="card-title">{props.movie.Title}</h3>
-          {props.movie.Plot}
+          <h4 className="card-title">
+            {props.movie.Title + " (" + props.movie.Year + ")"}
+          </h4>
+          <p className="card-text">
+            Genre: {props.movie.Genre} <br />
+            Actors: {props.movie.Actors}
+          </p>
+          <hr />
+          <p className="card-text">
+            <h6>Description:</h6>
+            {props.movie.Plot}
+          </p>
         </div>
       </div>
     </React.Fragment>
