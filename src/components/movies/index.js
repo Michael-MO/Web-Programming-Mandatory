@@ -5,7 +5,7 @@ import MoviesDetails from "./MoviesDetails";
 const Movies = () => {
   return (
     <React.Fragment>
-      <h2 className="mb-4">Movies</h2>
+      <h3 className="mb-4">Movies</h3>
       <div className="row">
         <div className="col-3">
           <MoviesList />
