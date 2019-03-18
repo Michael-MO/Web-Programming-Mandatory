@@ -3,7 +3,8 @@ import React from "react";
 const Contact = () => {
   return (
     <React.Fragment>
-      <h2>Contact</h2>
+      <h3>Contact</h3>
+      <p>This is the contacts page..</p>
     </React.Fragment>
   );
 };
