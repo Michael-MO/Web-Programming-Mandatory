@@ -10,22 +10,22 @@ const Navigation = () => {
         </Link>
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <NavLink className="nav-link" to="home">
+            <NavLink className="nav-link" to="/home">
               Home
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="movies">
+            <NavLink className="nav-link" to="/movies">
               Movies
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="contact">
+            <NavLink className="nav-link" to="/contact">
               Contact
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="about">
+            <NavLink className="nav-link" to="/about">
               About
             </NavLink>
           </li>
