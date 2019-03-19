@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { slctMovieItem } from "../../actions";
 import MOVIES from "../../assets/Movies";
+import { convertToURL } from "../../util";
 
 const MoviesList = props => {
   return (
@@ -15,7 +16,7 @@ const MoviesList = props => {
               <li class="list-group-item nav-item">
                 <NavLink
                   className="nav-link text-danger"
-                  to="#"
+                  to={"/movies/" + convertToURL(movie.Title)}
                   role="tab"
                   key={movie.Title}
                   onClick={() => props.slctMovieItem(movie)}
