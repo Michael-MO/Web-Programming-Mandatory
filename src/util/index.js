@@ -1,3 +1,8 @@
+// "The Ultimate Way to Slugify a URL String in JavaScript".
+// Source & Credit: https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
+// This function turns a string into a URL-friendly string.
+// E.g. "My name is Michael" => "my-name-is-michael".
+
 export const convertToURL = string => {
   const a = "àáäâãåăæçèéëêǵḧìíïîḿńǹñòóöôœṕŕßśșțùúüûǘẃẍÿź·/_,:;";
   const b = "aaaaaaaaceeeeghiiiimnnnoooooprssstuuuuuwxyz------";
