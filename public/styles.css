@@ -61,6 +61,11 @@ a.nav-link {
   font-size: 1rem;
 }
 
+.list-group-item .nav-link.active {
+  background-color: #dc3545;
+  color: #fff !important;
+}
+
 /* Card Overrides */
 
 .card .card-header {
