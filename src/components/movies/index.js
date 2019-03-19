@@ -1,6 +1,7 @@
 import React from "react";
 import MoviesList from "./MoviesList";
 import MoviesDetails from "./MoviesDetails";
+import { Switch, Route } from "react-router-dom";
 
 const Movies = () => {
   return (
@@ -11,7 +12,9 @@ const Movies = () => {
           <MoviesList />
         </div>
         <div className="col-9">
-          <MoviesDetails />
+          <Switch>
+            <Route path="/movies/:string" component={MoviesDetails} />
+          </Switch>
         </div>
       </div>
     </React.Fragment>
