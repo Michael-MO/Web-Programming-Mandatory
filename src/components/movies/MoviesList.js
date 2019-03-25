@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { slctMovieItem } from "../../actions";
 import MOVIES from "../../assets/Movies";
-import { convertToURL } from "../../util";
+import { convertToURL } from "../../utils";
 
 const MoviesList = props => {
   return (
