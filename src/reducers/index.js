@@ -9,6 +9,16 @@ const slctMovieItemRdcr = (slctMovieItem = MOVIES[0], action) => {
   return slctMovieItem;
 };
 
+const getPostsRdcr = (state = [], action) => {
+  switch (action.type) {
+    case "FETCH_POSTS":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
-  slctMovieItem: slctMovieItemRdcr
+  slctMovieItem: slctMovieItemRdcr,
+  allPosts: getPostsRdcr
 });
