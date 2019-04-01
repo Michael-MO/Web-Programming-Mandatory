@@ -1,35 +1,19 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchPosts } from "../actions";
+import React from "react";
 
-class Home extends Component {
-  componentDidMount() {
-    this.props.fetchPosts();
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <h3>Home</h3>
-        <p>This is the home page..</p>
-        {this.props.posts.map(post => {
-          return (
-            <React.Fragment>
-              <h4>{post.title}</h4>
-              <p>{post.body}</p>
-            </React.Fragment>
-          );
-        })}
-      </React.Fragment>
-    );
-  }
-}
-
-const mapStateToProps = state => {
-  return { posts: state.allPosts };
+const Home = () => {
+  return (
+    <div className="jumbotron">
+      <h1 className="display-4">JSONPlaceholder</h1>
+      <p className="lead">
+        This Web App utilizes React, React-Redux, Redux, Redux-thunk, Axios
+      </p>
+      <hr className="my-4" />
+      <p>
+        This mandatory project, uses 'https://jsonplaceholder.typicode.com/'s
+        api for fetching Users, Posts and Comments information.
+      </p>
+    </div>
+  );
 };
 
-export default connect(
-  mapStateToProps,
-  { fetchPosts }
-)(Home);
+export default Home;
