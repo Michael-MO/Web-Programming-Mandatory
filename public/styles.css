@@ -93,6 +93,12 @@ a.nav-link {
   font-weight: bold;
 }
 
+/* Media Object */
+
+.media-body {
+  font-size: 0.9rem;
+}
+
 /* Custom CSS */
 
 td.posts-icon {
