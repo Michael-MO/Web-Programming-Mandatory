@@ -101,8 +101,7 @@ a.nav-link {
 
 /* Custom CSS */
 
-td.posts-icon {
-  vertical-align: middle;
+.posts-icon {
   font-size: 30px;
 }
 
