@@ -15,22 +15,22 @@ export const getPosts = () => async dispatch => {
   });
 };
 
-export const selectedPost = post => {
+export const selectedPostAction = post => {
   return {
     type: "SELECTED_POST",
     payload: post
   };
 };
 
-export const getComments = () => async dispatch => {
-  const response = await jsonPlaceholder.get("comments");
+export const getCommentsAction = postId => async dispatch => {
+  const response = await jsonPlaceholder.get("posts/" + postId + "/comments");
   dispatch({
     type: "GET_COMMENTS",
     payload: response.data
   });
 };
 
-export const getusers = () => async dispatch => {
+export const getUsers = () => async dispatch => {
   const response = await jsonPlaceholder.get("users");
   dispatch({
     type: "GET_USERS",
