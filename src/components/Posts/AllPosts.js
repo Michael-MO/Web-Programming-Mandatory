@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { getPosts, selectedPost } from "../../actions";
+import { Link } from "react-router-dom";
+import { getPosts, selectedPostAction } from "../../actions";
 
 class AllPosts extends Component {
   componentDidMount() {
@@ -15,9 +15,15 @@ class AllPosts extends Component {
         <table className="table table-striped mt-3 table-posts">
           <thead>
             <tr>
-              <th colSpan="2">Title</th>
-              <th>Posted by</th>
-              <th>Comments</th>
+              <th colSpan="2">
+                <h5>Title</h5>
+              </th>
+              <th>
+                <h5>Posted by</h5>
+              </th>
+              <th>
+                <h5>Comments</h5>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -25,18 +31,19 @@ class AllPosts extends Component {
               return (
                 <tr>
                   <td className="col-1 posts-icon">
-                    <i class="fas fa-file pl-2 pr-4" />
+                    <i className="fas fa-file pl-2 pr-4" />
                   </td>
                   <td className="col-7">
-                    <NavLink
+                    <Link
+                      key={post.id}
                       className="text-info font-weight-bold"
                       to={"/posts/" + post.id}
-                      onClick={() => this.props.selectedPost(post)}
+                      onClick={() => this.props.selectedPostAction(post)}
                     >
                       {post.title}
-                    </NavLink>
+                    </Link>
                     <br />
-                    <small>{post.body.slice(0, 40)}..</small>
+                    {post.body.slice(0, 40)}..
                   </td>
                   <td className="col-2">{post.userId}</td>
                   <td className="col-2">0</td>
@@ -59,5 +66,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getPosts, selectedPost }
+  { getPosts, selectedPostAction }
 )(AllPosts);
