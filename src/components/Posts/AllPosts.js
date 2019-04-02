@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { getPosts, getUsersAction, selectedPostAction } from "../../actions";
-
-const styles = {
-  width: "1%",
-  whiteSpace: "nowrap"
-};
+import {
+  getPostsAction,
+  getUsersAction,
+  selectedPostAction
+} from "../../actions";
 
 class AllPosts extends Component {
   componentDidMount() {
-    this.props.getPosts();
+    this.props.getPostsAction();
     this.props.getUsersAction();
   }
 
@@ -88,5 +87,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getPosts, getUsersAction, selectedPostAction }
+  { getPostsAction, getUsersAction, selectedPostAction }
 )(AllPosts);
