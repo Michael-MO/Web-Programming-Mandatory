@@ -30,7 +30,7 @@ export const getCommentsAction = postId => async dispatch => {
   });
 };
 
-export const getUsers = () => async dispatch => {
+export const getUsersAction = () => async dispatch => {
   const response = await jsonPlaceholder.get("users");
   dispatch({
     type: "GET_USERS",
