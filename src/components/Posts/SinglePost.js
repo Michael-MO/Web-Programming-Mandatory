@@ -18,12 +18,16 @@ class SinglePost extends Component {
         <small>Posted by {this.props.selectedPost.userId}</small>
         <p className="mt-3">{this.props.selectedPost.body}</p>
         <hr />
-        <h5>Comments</h5>
-        <ul class="list-unstyled" />
+        <h5 className="mb-5">Comments</h5>
+        <ul className="list-unstyled" />
         {this.props.comments.map(comment => {
           return (
-            <li key={comment.id} className="media">
-              <img src="..." className="mr-3" alt="..." />
+            <li key={comment.id} className="media mb-3">
+              <img
+                src="https://via.placeholder.com/75"
+                className="rounded-circle mr-4"
+                alt="..."
+              />
               <div className="media-body">
                 <h5 className="mt-0 mb-1">{comment.name}</h5>
                 {comment.body}
