@@ -12,7 +12,7 @@ const slctMovieItemRdcr = (slctMovieItem = MOVIES[0], action) => {
 const getPostsReducer = (state = [], action) => {
   switch (action.type) {
     case "GET_POSTS":
-      return action.payload.slice(0, 20);
+      return action.payload.slice(5, 15);
     default:
       return state;
   }
