@@ -67,7 +67,7 @@ a.nav-link {
 
 .navbar-light .navbar-nav .nav-link.active {
   color: #17a2b8;
-  background-color: #fff;
+  background-color: #fefefe;
   border-top: 4px solid #17a2b8;
 }
 
@@ -103,6 +103,11 @@ a.nav-link {
 
 .posts-icon {
   font-size: 30px;
+}
+
+td.no-stretch {
+  width: 1%;
+  white-space: nowrap;
 }
 
 table.table-posts td {

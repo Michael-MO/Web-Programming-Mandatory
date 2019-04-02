@@ -3,6 +3,11 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { getPosts, getUsersAction, selectedPostAction } from "../../actions";
 
+const styles = {
+  width: "1%",
+  whiteSpace: "nowrap"
+};
+
 class AllPosts extends Component {
   componentDidMount() {
     this.props.getPosts();
@@ -31,7 +36,7 @@ class AllPosts extends Component {
         <table className="table table-striped mt-3 table-posts">
           <thead>
             <tr>
-              <th>
+              <th colSpan="2">
                 <h5>Title</h5>
               </th>
               <th>
@@ -46,22 +51,20 @@ class AllPosts extends Component {
             {this.mergeArrays().map(post => {
               return (
                 <tr>
-                  <td className="col-8 clearfix">
-                    <div className="float-left">
-                      <i className="fas fa-file posts-icon pl-2 pr-4" />
-                    </div>
-                    <div className="float-left">
-                      <Link
-                        key={post.id}
-                        className="text-info font-weight-bold"
-                        to={"/posts/" + post.id}
-                        onClick={() => this.props.selectedPostAction(post)}
-                      >
-                        {post.title}
-                      </Link>
-                      <br />
-                      {post.body.slice(0, 40)}..
-                    </div>
+                  <td className="no-stretch">
+                    <i className="fas fa-file posts-icon pl-2" />
+                  </td>
+                  <td>
+                    <Link
+                      key={post.id}
+                      className="text-info font-weight-bold"
+                      to={"/posts/" + post.id}
+                      onClick={() => this.props.selectedPostAction(post)}
+                    >
+                      {post.title}
+                    </Link>
+                    <br />
+                    {post.body.slice(0, 40)}..
                   </td>
                   <td className="col-2">{post.userName}</td>
                   <td className="col-2">0</td>
