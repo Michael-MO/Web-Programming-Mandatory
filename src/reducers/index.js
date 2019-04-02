@@ -29,7 +29,7 @@ const selectedPostReducer = (state = null, action) => {
 const getCommentsReducer = (state = [], action) => {
   switch (action.type) {
     case "GET_COMMENTS":
-      return action.payload.slice(0, 10);
+      return action.payload;
     default:
       return state;
   }
