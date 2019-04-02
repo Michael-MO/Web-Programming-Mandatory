@@ -1,11 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { getPosts, selectedPostAction } from "../../actions";
+import { getPosts, getUsersAction, selectedPostAction } from "../../actions";
 
 class AllPosts extends Component {
   componentDidMount() {
     this.props.getPosts();
+    this.props.getUsersAction();
+  }
+
+  mergeArrays() {
+    let newArray = [];
+
+    this.props.posts.forEach(post => {
+      this.props.users.forEach(user => {
+        if (post.userId === user.id) {
+          post.userName = user.name;
+          newArray.push(post);
+        }
+      });
+    });
+
+    return newArray;
   }
 
   render() {
@@ -15,7 +31,7 @@ class AllPosts extends Component {
         <table className="table table-striped mt-3 table-posts">
           <thead>
             <tr>
-              <th colSpan="2">
+              <th>
                 <h5>Title</h5>
               </th>
               <th>
@@ -27,25 +43,27 @@ class AllPosts extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.posts.map(post => {
+            {this.mergeArrays().map(post => {
               return (
                 <tr>
-                  <td className="col-1 posts-icon">
-                    <i className="fas fa-file pl-2 pr-4" />
+                  <td className="col-8 clearfix">
+                    <div className="float-left">
+                      <i className="fas fa-file posts-icon pl-2 pr-4" />
+                    </div>
+                    <div className="float-left">
+                      <Link
+                        key={post.id}
+                        className="text-info font-weight-bold"
+                        to={"/posts/" + post.id}
+                        onClick={() => this.props.selectedPostAction(post)}
+                      >
+                        {post.title}
+                      </Link>
+                      <br />
+                      {post.body.slice(0, 40)}..
+                    </div>
                   </td>
-                  <td className="col-7">
-                    <Link
-                      key={post.id}
-                      className="text-info font-weight-bold"
-                      to={"/posts/" + post.id}
-                      onClick={() => this.props.selectedPostAction(post)}
-                    >
-                      {post.title}
-                    </Link>
-                    <br />
-                    {post.body.slice(0, 40)}..
-                  </td>
-                  <td className="col-2">{post.userId}</td>
+                  <td className="col-2">{post.userName}</td>
                   <td className="col-2">0</td>
                 </tr>
               );
@@ -60,11 +78,12 @@ class AllPosts extends Component {
 const mapStateToProps = state => {
   return {
     posts: state.getPosts,
+    users: state.getUsers,
     selectedPost: state.selectedPost
   };
 };
 
 export default connect(
   mapStateToProps,
-  { getPosts, selectedPostAction }
+  { getPosts, getUsersAction, selectedPostAction }
 )(AllPosts);
