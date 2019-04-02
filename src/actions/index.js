@@ -7,7 +7,7 @@ export const slctMovieItem = movie => {
   };
 };
 
-export const getPosts = () => async dispatch => {
+export const getPostsAction = () => async dispatch => {
   const response = await jsonPlaceholder.get("posts");
   dispatch({
     type: "GET_POSTS",
@@ -23,7 +23,7 @@ export const selectedPostAction = post => {
 };
 
 export const getCommentsAction = postId => async dispatch => {
-  const response = await jsonPlaceholder.get("posts/" + postId + "/comments");
+  const response = await jsonPlaceholder.get("comments?postId=" + postId);
   dispatch({
     type: "GET_COMMENTS",
     payload: response.data
