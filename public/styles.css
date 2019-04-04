@@ -99,6 +99,13 @@ a.nav-link {
   font-size: 0.9rem;
 }
 
+/* Buttons Overrides */
+
+.btn {
+  text-transform: uppercase;
+  padding: 0.575rem 1.75rem;
+}
+
 /* Custom CSS */
 
 .posts-icon {
