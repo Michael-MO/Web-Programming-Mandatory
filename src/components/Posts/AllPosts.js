@@ -13,6 +13,8 @@ class AllPosts extends Component {
     this.props.getUsersAction();
   }
 
+  // I am uncertain of this approach.
+  // But currently don't see any other way, to create a relationship between two 'tables' of data.
   mergeArrays() {
     let newArray = [];
 
