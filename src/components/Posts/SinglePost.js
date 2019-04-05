@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectedPostAction, getCommentsAction } from "../../actions";
+import { selectedPostAction, getCommentsByIdAction } from "../../actions";
 
 class SinglePost extends Component {
   componentDidMount() {
-    this.props.getCommentsAction(this.props.selectedPost.id);
+    this.props.getCommentsByIdAction(this.props.selectedPost.id);
   }
 
   render() {
@@ -18,7 +18,7 @@ class SinglePost extends Component {
         <small>Posted by {this.props.selectedPost.userName}</small>
         <p className="mt-3">{this.props.selectedPost.body}</p>
         <hr />
-        <h5 className="mb-5">Comments</h5>
+        <h5 className="mb-5">Comments ({this.props.comments.length})</h5>
         <ul className="list-unstyled">
           {this.props.comments.map(comment => {
             return (
@@ -44,11 +44,11 @@ class SinglePost extends Component {
 const mapStateToProps = state => {
   return {
     selectedPost: state.selectedPost,
-    comments: state.getComments
+    comments: state.getCommentsById
   };
 };
 
 export default connect(
   mapStateToProps,
-  { selectedPostAction, getCommentsAction }
+  { selectedPostAction, getCommentsByIdAction }
 )(SinglePost);
