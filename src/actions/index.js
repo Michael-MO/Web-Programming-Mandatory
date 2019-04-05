@@ -22,8 +22,16 @@ export const selectedPostAction = post => {
   };
 };
 
-export const getCommentsAction = postId => async dispatch => {
+export const getCommentsByIdAction = postId => async dispatch => {
   const response = await jsonPlaceholder.get("comments?postId=" + postId);
+  dispatch({
+    type: "GET_COMMENTS_BY_ID",
+    payload: response.data
+  });
+};
+
+export const getCommentsAction = () => async dispatch => {
+  const response = await jsonPlaceholder.get("comments");
   dispatch({
     type: "GET_COMMENTS",
     payload: response.data
