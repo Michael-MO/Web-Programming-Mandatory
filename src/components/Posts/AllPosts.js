@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {
   getPostsAction,
   getUsersAction,
+  getCommentsAction,
   selectedPostAction
 } from "../../actions";
 
@@ -11,6 +12,7 @@ class AllPosts extends Component {
   componentDidMount() {
     this.props.getPostsAction();
     this.props.getUsersAction();
+    this.props.getCommentsAction();
   }
 
   // I am uncertain of this approach.
@@ -68,7 +70,13 @@ class AllPosts extends Component {
                     {post.body.slice(0, 40)}..
                   </td>
                   <td className="col-2">{post.userName}</td>
-                  <td className="col-2">0</td>
+                  <td className="col-2">
+                    {
+                      this.props.comments.filter(comment => {
+                        return comment.postId === post.id;
+                      }).length
+                    }
+                  </td>
                 </tr>
               );
             })}
@@ -83,11 +91,12 @@ const mapStateToProps = state => {
   return {
     posts: state.getPosts,
     users: state.getUsers,
+    comments: state.getComments,
     selectedPost: state.selectedPost
   };
 };
 
 export default connect(
   mapStateToProps,
-  { getPostsAction, getUsersAction, selectedPostAction }
+  { getPostsAction, getUsersAction, getCommentsAction, selectedPostAction }
 )(AllPosts);
