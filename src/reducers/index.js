@@ -26,6 +26,15 @@ const selectedPostReducer = (state = null, action) => {
   return state;
 };
 
+const getCommentsByIdReducer = (state = [], action) => {
+  switch (action.type) {
+    case "GET_COMMENTS_BY_ID":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const getCommentsReducer = (state = [], action) => {
   switch (action.type) {
     case "GET_COMMENTS":
@@ -48,6 +57,7 @@ export default combineReducers({
   slctMovieItem: slctMovieItemRdcr,
   getPosts: getPostsReducer,
   selectedPost: selectedPostReducer,
+  getCommentsById: getCommentsByIdReducer,
   getComments: getCommentsReducer,
   getUsers: getUsersReducer
 });
