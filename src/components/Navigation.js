@@ -6,7 +6,7 @@ const Navigation = () => {
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          <i className="fas fa-folder" />
+          <i className="fab fa-react" />
         </Link>
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
