@@ -7,33 +7,33 @@ const Contact = () => {
       <div className="form-group row">
         <label
           for="colFormLabel"
-          className="col-sm-2 offset-lg-3 col-form-label"
+          className="col-sm-1 offset-lg-3 col-form-label"
         >
           Name
         </label>
-        <div className="col-lg-4">
+        <div className="col-lg-5">
           <input type="text" className="form-control" id="colFormLabel" />
         </div>
       </div>
       <div className="form-group row">
         <label
           for="colFormLabel"
-          className="col-sm-2 offset-lg-3 col-form-label"
+          className="col-sm-1 offset-lg-3 col-form-label"
         >
           Email
         </label>
-        <div className="col-lg-4">
+        <div className="col-lg-5">
           <input type="email" className="form-control" id="colFormLabel" />
         </div>
       </div>
       <div className="form-group row">
         <label
           for="colFormLabel"
-          className="col-sm-2 offset-lg-3 col-form-label"
+          className="col-sm-1 offset-lg-3 col-form-label"
         >
           Subject
         </label>
-        <div className="col-lg-4">
+        <div className="col-lg-5">
           <input type="text" className="form-control" id="colFormLabel" />
         </div>
       </div>
@@ -48,7 +48,7 @@ const Contact = () => {
       </div>
       <div className="form-group row">
         <div className="col-sm-12 offset-lg-3">
-          <button type="submit" class="btn btn-primary mb-2">
+          <button type="submit" class="btn btn-primary">
             Send
           </button>
         </div>
