@@ -24,6 +24,9 @@ class AllPosts extends Component {
       this.props.users.forEach(user => {
         if (post.userId === user.id) {
           post.userName = user.name;
+          post.comments = this.props.comments.filter(comment => {
+            return comment.postId === post.id;
+          });
           newArray.push(post);
         }
       });
@@ -70,13 +73,7 @@ class AllPosts extends Component {
                     {post.body.slice(0, 40)}..
                   </td>
                   <td className="col-2">{post.userName}</td>
-                  <td className="col-2">
-                    {
-                      this.props.comments.filter(comment => {
-                        return comment.postId === post.id;
-                      }).length
-                    }
-                  </td>
+                  <td className="col-2">{post.comments.length}</td>
                 </tr>
               );
             })}
