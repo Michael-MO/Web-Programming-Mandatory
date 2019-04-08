@@ -5,7 +5,7 @@ import { selectedPostAction, getCommentsByIdAction } from "../../actions";
 
 class SinglePost extends Component {
   componentDidMount() {
-    this.props.getCommentsByIdAction(this.props.selectedPost.id);
+    //this.props.getCommentsByIdAction(this.props.selectedPost.id);
   }
 
   render() {
@@ -18,9 +18,11 @@ class SinglePost extends Component {
         <small>Posted by {this.props.selectedPost.userName}</small>
         <p className="mt-3">{this.props.selectedPost.body}</p>
         <hr />
-        <h5 className="mb-5">Comments ({this.props.comments.length})</h5>
+        <h5 className="mb-5">
+          Comments ({this.props.selectedPost.comments.length})
+        </h5>
         <ul className="list-unstyled">
-          {this.props.comments.map(comment => {
+          {this.props.selectedPost.comments.map(comment => {
             return (
               <li key={comment.id} className="media mb-3 col-md-10">
                 <img
