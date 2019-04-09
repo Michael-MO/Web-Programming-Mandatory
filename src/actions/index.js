@@ -1,8 +1,8 @@
 import jsonPlaceholder from "../apis/jsonPlaceholder";
 
-export const slctMovieItem = movie => {
+export const selectMovieAction = movie => {
   return {
-    type: "MOVIE_SELECTED",
+    type: "SELECT_MOVIE",
     payload: movie
   };
 };
@@ -15,9 +15,9 @@ export const getPostsAction = () => async dispatch => {
   });
 };
 
-export const selectedPostAction = post => {
+export const selectPostAction = post => {
   return {
-    type: "SELECTED_POST",
+    type: "SELECT_POST",
     payload: post
   };
 };
