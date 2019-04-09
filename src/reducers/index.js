@@ -1,12 +1,11 @@
 import { combineReducers } from "redux";
 import MOVIES from "../assets/Movies";
 
-const slctMovieItemRdcr = (slctMovieItem = MOVIES[0], action) => {
-  if (action.type === "MOVIE_SELECTED") {
+const selectMovieReducer = (state = MOVIES[0], action) => {
+  if (action.type === "SELECT_MOVIE") {
     return action.payload;
   }
-
-  return slctMovieItem;
+  return state;
 };
 
 const getPostsReducer = (state = [], action) => {
@@ -18,11 +17,10 @@ const getPostsReducer = (state = [], action) => {
   }
 };
 
-const selectedPostReducer = (state = null, action) => {
-  if (action.type === "SELECTED_POST") {
+const selectPostReducer = (state = null, action) => {
+  if (action.type === "SELECT_POST") {
     return action.payload;
   }
-
   return state;
 };
 
@@ -54,9 +52,9 @@ const getUsersReducer = (state = [], action) => {
 };
 
 export default combineReducers({
-  slctMovieItem: slctMovieItemRdcr,
+  selectedMovie: selectMovieReducer,
   getPosts: getPostsReducer,
-  selectedPost: selectedPostReducer,
+  selectedPost: selectPostReducer,
   getCommentsById: getCommentsByIdReducer,
   getComments: getCommentsReducer,
   getUsers: getUsersReducer
