@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectedPostAction, getCommentsByIdAction } from "../../actions";
+import { getCommentsByIdAction } from "../../actions";
 
 class SinglePost extends Component {
   componentDidMount() {
@@ -11,15 +11,17 @@ class SinglePost extends Component {
   render() {
     return (
       <React.Fragment>
-        <Link className="btn btn-primary mb-3" to="/posts">
+        <Link className="btn btn-primary mb-4" to="/posts">
           Back
         </Link>
         <h3>{this.props.selectedPost.title}</h3>
-        <small>Posted by {this.props.selectedPost.userName}</small>
+        <i>Posted by {this.props.selectedPost.userName}</i>
+        <hr />
         <p className="mt-3">{this.props.selectedPost.body}</p>
         <hr />
         <h5 className="mb-5">
-          Comments ({this.props.selectedPost.comments.length})
+          Comments ({this.props.selectedPost.comments.length}){" "}
+          <i class="far fa-comment-dots" />
         </h5>
         <ul className="list-unstyled">
           {this.props.selectedPost.comments.map(comment => {
@@ -52,5 +54,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { selectedPostAction, getCommentsByIdAction }
+  { getCommentsByIdAction }
 )(SinglePost);
