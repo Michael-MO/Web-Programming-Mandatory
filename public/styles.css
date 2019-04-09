@@ -31,12 +31,13 @@ h6 {
 .navbar {
   padding-top: 0;
   padding-bottom: 0;
+  border-bottom: 4px solid #17a2b8;
 }
 
 a.nav-link {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .nav-item:hover {
@@ -66,9 +67,15 @@ a.nav-link {
 }
 
 .navbar-light .navbar-nav .nav-link.active {
-  color: #17a2b8;
+  color: #383838;
   background-color: #fefefe;
   border-top: 4px solid #17a2b8;
+}
+
+.navbar-toggler {
+  color: #17a2b8 !important;
+  border: 0 none;
+  font-size: 1.5rem;
 }
 
 /* List-group + Nav Overrides */
@@ -83,7 +90,7 @@ a.nav-link {
 }
 
 .list-group-item .nav-link.active {
-  background-color: #dc3545;
+  background-color: #17a2b8;
   color: #fff !important;
 }
 
@@ -121,6 +128,10 @@ table.table-posts td {
   vertical-align: middle !important;
 }
 
-table.table-posts tbody tr:hover {
-  background-color: #fff;
+th > h5 {
+  margin: 0;
 }
+
+/* table.table-posts tbody tr:hover {
+  background-color: #fff;
+} */
