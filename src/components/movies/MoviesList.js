@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { slctMovieItem } from "../../actions";
+import { selectMovieAction } from "../../actions";
 import MOVIES from "../../assets/Movies";
 import { convertToURL } from "../../utils";
 
@@ -9,17 +9,17 @@ const MoviesList = props => {
   return (
     <React.Fragment>
       <div className="card">
-        <div class="card-header">Selection</div>
+        <div className="card-header">Selection</div>
         <ul className="list-group list-group-flush nav flex-column">
           {MOVIES.map(movie => {
             return (
-              <li class="list-group-item nav-item">
+              <li className="list-group-item nav-item">
                 <NavLink
-                  className="nav-link text-danger"
+                  className="nav-link text-info"
                   to={"/movies/" + convertToURL(movie.Title)}
                   role="tab"
                   key={movie.Title}
-                  onClick={() => props.slctMovieItem(movie)}
+                  onClick={() => props.selectMovieAction(movie)}
                 >
                   <i className="fas fa-angle-right pr-3" />
                   {movie.Title}
@@ -34,10 +34,10 @@ const MoviesList = props => {
 };
 
 const mapStateToProps = state => {
-  return { movie: state.slctMovieItem };
+  // return { movie: state.selectedMovie };
 };
 
 export default connect(
   mapStateToProps,
-  { slctMovieItem }
+  { selectMovieAction }
 )(MoviesList);
