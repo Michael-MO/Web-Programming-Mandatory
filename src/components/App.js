@@ -7,6 +7,7 @@ import Home from "./Home";
 import Contact from "./Contact";
 import About from "./About";
 import Posts from "./Posts";
+import Movies from "./Movies";
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/home" component={Home} />
               <Route path="/posts" component={Posts} />
+              <Route path="/movies" component={Movies} />
               <Route path="/contact" component={Contact} />
               <Route path="/about" component={About} />
             </Switch>
