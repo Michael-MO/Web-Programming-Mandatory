@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { slctMovieItem } from "../../actions";
 
 const MoviesDetails = props => {
   return (
@@ -8,16 +7,16 @@ const MoviesDetails = props => {
       <div className="card">
         <div className="card-body">
           <h4 className="card-title">
-            {props.movie.Title + " (" + props.movie.Year + ")"}
+            {props.selectedMovie.Title + " (" + props.selectedMovie.Year + ")"}
           </h4>
           <p className="card-text">
-            <strong>Genre:</strong> {props.movie.Genre} <br />
-            <strong>Actors:</strong> {props.movie.Actors}
+            <strong>Genre:</strong> {props.selectedMovie.Genre} <br />
+            <strong>Actors:</strong> {props.selectedMovie.Actors}
           </p>
           <hr />
           <p className="card-text">
             <h6>Description:</h6>
-            {props.movie.Plot}
+            {props.selectedMovie.Plot}
           </p>
         </div>
       </div>
@@ -26,10 +25,7 @@ const MoviesDetails = props => {
 };
 
 const mapStateToProps = state => {
-  return { movie: state.slctMovieItem };
+  return { selectedMovie: state.selectedMovie };
 };
 
-export default connect(
-  mapStateToProps,
-  { slctMovieItem }
-)(MoviesDetails);
+export default connect(mapStateToProps)(MoviesDetails);
